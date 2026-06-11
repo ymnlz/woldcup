@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026世界杯 - 热门队员</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f5f7;
+            color: #333;
+            line-height: 1.8;
+        }
+        .top-bar {
+            background-color: #c00;
+            color: #fff;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 14px;
+        }
+        .header {
+            background-color: #003366;
+            padding: 20px 0;
+        }
+        .header-wrap {
+            width: 95%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 28px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .sub-title {
+            color: #ccc;
+            font-size: 16px;
+        }
+        .nav {
+            background-color: #d81e06;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .nav-wrap {
+            width: 95%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 18px;
+            font-size: 15px;
+            transition: background 0.3s;
+            border-right: 1px solid #b01805;
+        }
+        .nav a:hover, .nav a.active {
+            background-color: #b01805;
+        }
+        .main {
+            width: 95%;
+            max-width: 1300px;
+            margin: 20px auto 40px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 6px;
+            padding: 25px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .card-title {
+            font-size: 20px;
+            color: #003366;
+            border-left: 4px solid #d81e06;
+            padding-left: 12px;
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+        .card-content { font-size: 15px; }
+        .list-item {
+            list-style: none;
+            margin: 10px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+        .list-item::before {
+            content: "•";
+            color: #d81e06;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+        footer {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .nav a { padding: 10px 12px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">2026美加墨世界杯专题 | 全程高清直播 海量赛事资讯</div>
+    <div class="header">
+        <div class="header-wrap">
+            <div class="logo">FIFA 2026世界杯</div>
+            <div class="sub-title">第23届国际足联世界杯 · 美加墨联合举办</div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="nav-wrap">
+            <a href="index.html">世界杯首页</a>
+            <a href="schedule.html">赛程</a>
+            <a href="rank.html">积分榜</a>
+            <a href="team.html">参赛队伍</a>
+            <a href="channel.html">观赛渠道</a>
+            <a href="hotTeam.html">热门球队</a>
+            <a href="hotPlayer.html" class="active">热门队员</a>
+            <a href="fansGroup.html">看球天团</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="card">
+    <h2 class="card-title">热门球星</h2>
+    <ul class="list-item">
+        <li>
+            <strong>C罗</strong>：葡萄牙巨星，足坛传奇射手，身体素质出众，射门能力顶尖，赛场影响力巨大。
+            <br>
+            <img src="cronaldo.jpg" alt="C罗" style="width:100%;aspect-ratio:3/4;margin-top:10px;border-radius:6px;object-fit:cover;">
+        </li>
+        <li style="margin-top:20px;">
+            <strong>梅西</strong>：阿根廷核心，技术细腻盘带无解，传球与终结能力兼备，多次斩获足坛重磅荣誉。
+            <br>
+            <img src="messi.jpg" alt="梅西" style="width:100%;aspect-ratio:3/4;margin-top:10px;border-radius:6px;object-fit:cover;">
+        </li>
+        <li style="margin-top:20px;">
+            <strong>姆巴佩</strong>：法国当红新星，速度极快、爆发力强，是足坛新生代领军人物。
+            <br>
+            <img src="mbappe.jpg" alt="姆巴佩" style="width:100%;aspect-ratio:3/4;margin-top:10px;border-radius:6px;object-fit:cover;">
+        </li>
+        <li style="margin-top:20px;">
+            <strong>哈兰德</strong>：挪威强力中锋，身高体壮冲击力十足，进球效率常年稳居前列。
+            <br>
+            <img src="haaland.jpg" alt="哈兰德" style="width:100%;aspect-ratio:3/4;margin-top:10px;border-radius:6px;object-fit:cover;">
+        </li>
+        <li style="margin-top:20px;">
+            <strong>贝林厄姆</strong>：英格兰全能中场，攻防均衡，视野开阔，未来潜力无限。
+            <br>
+            <img src="bellingham.jpg" alt="贝林厄姆" style="width:100%;aspect-ratio:3/4;margin-top:10px;border-radius:6px;object-fit:cover;">
+        </li>
+        <li style="margin-top:20px;">
+            <strong>维尼修斯</strong>：巴西边路天才，速度与技巧结合完美，突破能力极具威胁。
+            <br>
+            <img src="vinicius.jpg" alt="维尼修斯" style="width:100%;aspect-ratio:3/4;margin-top:10px;border-radius:6px;object-fit:cover;">
+        </li>
+        <li style="margin-top:20px;">
+            <strong>内马尔</strong>：盘带技术出神入化，球场创造力十足
+            <br>
+            <img src="player7.jpg" alt="球员" style="width:100%;aspect-ratio:3/4;margin-top:10px;border-radius:6px;object-fit:cover;">
+        </li>
+    </ul>
+</div>
+    </div>
+
+    <footer>
+        <p>2026美加墨世界杯专题页面 | 仿央视体育官网样式 仅供学习使用</p>
+        <p style="margin-top:8px">赛事信息来源于央视体育官方平台 &copy; 2026</p>
+    </footer>
+</body>
+</html>

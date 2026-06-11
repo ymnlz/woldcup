@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026世界杯 - 积分榜</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f5f7;
+            color: #333;
+            line-height: 1.8;
+        }
+        .top-bar {
+            background-color: #c00;
+            color: #fff;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 14px;
+        }
+        .header {
+            background-color: #003366;
+            padding: 20px 0;
+        }
+        .header-wrap {
+            width: 95%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 28px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .sub-title {
+            color: #ccc;
+            font-size: 16px;
+        }
+        .nav {
+            background-color: #d81e06;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .nav-wrap {
+            width: 95%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 18px;
+            font-size: 15px;
+            transition: background 0.3s;
+            border-right: 1px solid #b01805;
+        }
+        .nav a:hover, .nav a.active {
+            background-color: #b01805;
+        }
+        .main {
+            width: 95%;
+            max-width: 1300px;
+            margin: 20px auto 40px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 6px;
+            padding: 25px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .card-title {
+            font-size: 20px;
+            color: #003366;
+            border-left: 4px solid #d81e06;
+            padding-left: 12px;
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+        .card-content { font-size: 15px; }
+        .rank-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .rank-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .rank-table th, .rank-table td {
+            border: 1px solid #eee;
+            padding: 8px 5px;
+            text-align: center;
+            font-size: 13px;
+        }
+        .rank-table th {
+            background: #003366;
+            color: #fff;
+        }
+        footer {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .nav a { padding: 10px 12px; font-size: 14px; }
+            .rank-grid { grid-template-columns: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">2026美加墨世界杯专题 | 全程高清直播 海量赛事资讯</div>
+    <div class="header">
+        <div class="header-wrap">
+            <div class="logo">FIFA 2026世界杯</div>
+            <div class="sub-title">第23届国际足联世界杯 · 美加墨联合举办</div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="nav-wrap">
+            <a href="index.html">世界杯首页</a>
+            <a href="schedule.html">赛程</a>
+            <a href="rank.html" class="active">积分榜</a>
+            <a href="team.html">参赛队伍</a>
+            <a href="channel.html">观赛渠道</a>
+            <a href="hotTeam.html">热门球队</a>
+            <a href="hotPlayer.html">热门队员</a>
+            <a href="fansGroup.html">看球天团</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="card">
+            <h2 class="card-title">12个小组积分榜（赛前初始积分）</h2>
+            <div class="card-content">
+                <div class="rank-grid">
+                    <!-- A组 -->
+                    <table class="rank-table">
+                        <tr><th colspan="6">A组</th></tr>
+                        <tr><td>排名</td><td>球队</td><td>胜</td><td>平</td><td>负</td><td>积分</td></tr>
+                        <tr><td>1</td><td>墨西哥</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>2</td><td>南非</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>3</td><td>韩国</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>4</td><td>捷克</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    </table>
+                    <!-- B组 -->
+                    <table class="rank-table">
+                        <tr><th colspan="6">B组</th></tr>
+                        <tr><td>排名</td><td>球队</td><td>胜</td><td>平</td><td>负</td><td>积分</td></tr>
+                        <tr><td>1</td><td>加拿大</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>2</td><td>波黑</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>3</td><td>卡塔尔</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>4</td><td>瑞士</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    </table>
+                    <!-- 其他小组表格你可以继续复制上面的结构补充 -->
+                </div>
+                <p style="margin-top:20px;color:#666">说明：以上为赛前初始积分，比赛进行后数据将实时更新。</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>2026美加墨世界杯专题页面 | 仿央视体育官网样式 仅供学习使用</p>
+        <p style="margin-top:8px">赛事信息来源于央视体育官方平台 &copy; 2026</p>
+    </footer>
+</body>
+</html>

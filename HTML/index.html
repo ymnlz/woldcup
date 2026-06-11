@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026世界杯 - 首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f5f7;
+            color: #333;
+            line-height: 1.8;
+        }
+        .top-bar {
+            background-color: #c00;
+            color: #fff;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 14px;
+        }
+        .header {
+            background-color: #003366;
+            padding: 20px 0;
+        }
+        .header-wrap {
+            width: 95%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 28px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .sub-title {
+            color: #ccc;
+            font-size: 16px;
+        }
+        .nav {
+            background-color: #d81e06;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .nav-wrap {
+            width: 95%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 18px;
+            font-size: 15px;
+            transition: background 0.3s;
+            border-right: 1px solid #b01805;
+        }
+        .nav a:hover, .nav a.active {
+            background-color: #b01805;
+        }
+        /* 轮播 16:9 比例 */
+        .swiper {
+            width: 95%;
+            max-width: 1300px;
+            margin: 20px auto;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            height: 0;
+            padding-top: 56.25%;
+        }
+        .swiper-list {
+            width: 400%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.5s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .swiper-item {
+            width: 25%;
+            height: 100%;
+        }
+        .swiper-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            user-select: none;
+            z-index: 10;
+        }
+        .swiper-btn:hover {
+            background: rgba(0,0,0,0.7);
+        }
+        .prev { left: 20px; }
+        .next { right: 20px; }
+        .swiper-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+        .dot.active { background: #fff; }
+        .main {
+            width: 95%;
+            max-width: 1300px;
+            margin: 0 auto 40px;
+            display: grid;
+            grid-template-columns: 72% 26%;
+            gap: 2%;
+        }
+        .main-left {
+            background: #fff;
+            border-radius: 6px;
+            padding: 25px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        }
+        .card { margin-bottom: 30px; }
+        .card-title {
+            font-size: 20px;
+            color: #003366;
+            border-left: 4px solid #d81e06;
+            padding-left: 12px;
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+        .card-content { font-size: 15px; }
+        .list-item {
+            list-style: none;
+            margin: 10px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+        .list-item::before {
+            content: "•";
+            color: #d81e06;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+        .main-right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .side-card {
+            background: #fff;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        }
+        .side-title {
+            font-size: 17px;
+            color: #003366;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #d81e06;
+            margin-bottom: 15px;
+        }
+        footer {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .main { grid-template-columns: 100%; }
+            .nav a { padding: 10px 12px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">2026美加墨世界杯专题 | 全程高清直播 海量赛事资讯</div>
+    <div class="header">
+        <div class="header-wrap">
+            <div class="logo">FIFA 2026世界杯</div>
+            <div class="sub-title">第23届国际足联世界杯 · 美加墨联合举办</div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="nav-wrap">
+            <a href="index.html" class="active">世界杯首页</a>
+            <a href="schedule.html">赛程</a>
+            <a href="rank.html">积分榜</a>
+            <a href="team.html">参赛队伍</a>
+            <a href="channel.html">观赛渠道</a>
+            <a href="hotTeam.html">热门球队</a>
+            <a href="hotPlayer.html">热门队员</a>
+            <a href="fansGroup.html">看球天团</a>
+        </div>
+    </div>
+
+<div class="swiper">
+   <div class="swiper-list">
+    <!-- 第一张轮播图：新华社世界杯专题 -->
+    <div class="swiper-item">
+        <a href="https://www.news.cn/sports/topic/fifa2026/index.htm" target="_blank">
+            <img src="世界杯海报1.jpg" alt="海报1" style="width:100%;height:100%;">
+        </a>
+    </div>
+    <!-- 第二张轮播图：世界杯吉祥物专题 -->
+    <div class="swiper-item">
+        <a href="https://www.toutiao.com/article/7626685106685526562/?wid=1781173137751" target="_blank">
+            <img src="世界杯海报2.jpg" alt="海报2" style="width:100%;height:100%;">
+        </a>
+    </div>
+    <!-- 第三张轮播图：央视世界杯宣传片 -->
+    <div class="swiper-item">
+        <a href="https://sports.cctv.cn/2026/05/27/VIDEdBBLWk1gAG7lNFfbZvby260527.shtml" target="_blank">
+            <img src="世界杯海报3.jpg" alt="海报3" style="width:100%;height:100%;">
+        </a>
+    </div>
+    <!-- 第四张轮播图：足坛传奇最后一舞专题 -->
+    <div class="swiper-item">
+        <a href="https://www.sohu.com/a/1031550673_122039796" target="_blank">
+            <img src="世界杯海报4.jpg" alt="海报4" style="width:100%;height:100%;">
+        </a>
+    </div>
+</div>
+    <div class="swiper-btn prev">&lt;</div>
+    <div class="swiper-btn next">&gt;</div>
+    <div class="swiper-dots">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+        <div class="dot" data-index="3"></div>
+    </div>
+</div>
+
+    <div class="main">
+        <div class="main-left">
+            <div class="card">
+                <h2 class="card-title">赛事概况</h2>
+                <div class="card-content">
+                    <p>2026年国际足联世界杯由<strong>美国、加拿大、墨西哥</strong>三国联合主办，是世界杯历史上首次三国联办赛事，同时也是世界杯扩军至48支球队后的首届大赛。赛事从6月12日打响揭幕战，至7月20日收官，历时39天，总计104场正式比赛，16座球场分布在北美16座城市。</p>
+                    <p style="margin-top:10px">本届世界杯赛制全面升级，48支球队分为12个小组，每组4支队伍。小组前两名+8支成绩最佳小组第三名晋级32强淘汰赛，单场淘汰制直至决出冠军。本届赛事大部分比赛在北京时间白天进行，国内球迷无需熬夜观赛。</p>
+                </div>
+            </div>
+            <div class="card">
+                <h2 class="card-title">世界杯吉祥物</h2>
+                <div class="card-content">
+                    <p>本届世界杯拥有三款官方吉祥物，分别对应三个主办国：</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px;">
+                        <div style="text-align: center; flex: 1; min-width: 180px;">
+                            <img src="maple.jpg" alt="梅普尔（Maple）" style="width: 100%; max-width: 160px; border-radius: 8px;">
+                            <p style="margin-top: 8px;"><strong>梅普尔（Maple）</strong><br>驼鹿，代表加拿大</p>
+                        </div>
+                        <div style="text-align: center; flex: 1; min-width: 180px;">
+                            <img src="zayu.jpg" alt="萨尤（Zayu）" style="width: 100%; max-width: 160px; border-radius: 8px;">
+                            <p style="margin-top: 8px;"><strong>萨尤（Zayu）</strong><br>美洲豹，代表墨西哥</p>
+                        </div>
+                        <div style="text-align: center; flex: 1; min-width: 180px;">
+                            <img src="clutch.jpg" alt="克拉奇（Clutch）" style="width: 100%; max-width: 160px; border-radius: 8px;">
+                            <p style="margin-top: 8px;"><strong>克拉奇（Clutch）</strong><br>白头海雕，代表美国</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px;">三款吉祥物融合三国本土文化，寓意团结、拼搏与足球精神。</p>
+                </div>
+            </div>
+            <div class="card">
+                <h2 class="card-title">最新赛事动态</h2>
+                <div class="card-content">
+                    <ul class="list-item">
+                        <li>揭幕战：6月12日 03:00 墨西哥 VS 南非（墨西哥城体育场）</li>
+                        <li>A组首轮：6月12日 10:00 韩国 VS 捷克</li>
+                        <li>法国队全员抵达波士顿，积极备战小组赛</li>
+                        <li>墨西哥阿兹台克体育场完成开幕式最终筹备工作</li>
+                        <li>多支欧洲豪门完成热身赛，状态火热</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+       <!-- 选择我的主队（12支热门球队） -->
+<!-- 选择我的主队（12支热门球队，3:4图片） -->
+<div class="side-card">
+    <h3 class="side-title">选择我的主队</h3>
+    <div style="margin-top:10px;">
+        <select id="teamSelect" style="width:100%;padding:6px;font-size:14px;border:1px solid #ccc;border-radius:4px;">
+            <option value="">请选择支持球队</option>
+            <option value="阿根廷">阿根廷</option>
+            <option value="巴西">巴西</option>
+            <option value="法国">法国</option>
+            <option value="德国">德国</option>
+            <option value="西班牙">西班牙</option>
+            <option value="英格兰">英格兰</option>
+            <option value="葡萄牙">葡萄牙</option>
+            <option value="墨西哥">墨西哥</option>
+            <option value="美国">美国</option>
+            <option value="加拿大">加拿大</option>
+            <option value="日本">日本</option>
+            <option value="韩国">韩国</option>
+        </select>
+        <!-- 3:4 图片容器，最大宽度适配侧边栏 -->
+        <div id="teamShow" style="margin-top:12px;text-align:center;"></div>
+    </div>
+</div>
+<!-- 在页面底部的 </body> 标签前，加入这段JS -->
+<script>
+// ========== 轮播图功能 ==========
+const swiperList = document.querySelector('.swiper-list');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let index = 0;
+const total = dots.length;
+let timer = null;
+
+function changeSlide(idx){
+    swiperList.style.transform = `translateX(-${idx * 25}%)`;
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[idx].classList.add('active');
+}
+function nextSlide(){
+    index = (index + 1) % total;
+    changeSlide(index);
+}
+function prevSlide(){
+    index = (index - 1 + total) % total;
+    changeSlide(index);
+}
+function autoPlay(){
+    timer = setInterval(nextSlide, 3000);
+}
+function stopPlay(){
+    clearInterval(timer);
+}
+
+// 绑定轮播事件
+prevBtn.addEventListener('click', prevSlide);
+nextBtn.addEventListener('click', nextSlide);
+dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+        index = i;
+        changeSlide(index);
+    });
+});
+document.querySelector('.swiper').addEventListener('mouseenter', stopPlay);
+document.querySelector('.swiper').addEventListener('mouseleave', autoPlay);
+autoPlay();
+
+// ========== 选择主队 + 显示图片（3:4 最大尺寸） ==========
+const teamSelect = document.getElementById("teamSelect");
+const teamShow = document.getElementById("teamShow");
+
+teamSelect.addEventListener("change", function () {
+    let val = this.value;
+    if (val === "") {
+        teamShow.innerHTML = "";
+        return;
+    }
+    let imgPath = "";
+    switch(val){
+        case "阿根廷": imgPath = "阿根廷.jpg"; break;
+        case "巴西": imgPath = "巴西.jpg"; break;
+        case "法国": imgPath = "法国.jpg"; break;
+        case "德国": imgPath = "德国.jpg"; break;
+        case "西班牙": imgPath = "西班牙.jpg"; break;
+        case "英格兰": imgPath = "英格兰.jpg"; break;
+        case "葡萄牙": imgPath = "葡萄牙.jpg"; break;
+        case "墨西哥": imgPath = "墨西哥.jpg"; break;
+        case "美国": imgPath = "美国.jpg"; break;
+        case "加拿大": imgPath = "加拿大.jpg"; break;
+        case "日本": imgPath = "日本.jpg"; break;
+        case "韩国": imgPath = "韩国.jpg"; break;
+    }
+
+    // 图片撑满侧边栏，保持3:4比例，不变形
+    teamShow.innerHTML = `
+        <img src="${imgPath}" alt="${val}" 
+             style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;">
+        <p style="margin:10px 0 0;color:#d81e06;font-weight:bold;font-size:16px;">${val}</p>
+    `;
+});
+    </script>
+    </script>
+                    <div class="side-card">
+    <h3 class="side-title">世界杯回眸</h3>
+    <ul class="list-item">
+        <li>
+            <a href="https://baike.baidu.com/item/%E5%88%A9%E6%98%82%E5%86%85%E5%B0%94%C2%B7%E6%A2%85%E8%A5%BF/3965248" 
+               target="_blank" 
+               style="color:#d81e06; font-weight:bold; text-decoration:underline; cursor:pointer;">
+                梅西：为梦想再度冲锋 ➜
+            </a>
+        </li>
+        <li>
+            <a href="https://www.sohu.com/a/949941943_121890623" 
+               target="_blank" 
+               style="color:#d81e06; font-weight:bold; text-decoration:underline; cursor:pointer;">
+                C罗：追梦大力神杯 ➜
+            </a>
+        </li>
+        <li>
+            <a href="https://www.sohu.com/a/933057516_122001004" 
+               target="_blank" 
+               style="color:#d81e06; font-weight:bold; text-decoration:underline; cursor:pointer;">
+                齐达内：传奇绿茵生涯 ➜
+            </a>
+        </li>
+        <li>
+            <a href="https://baike.baidu.com/item/%E7%BD%97%E4%BC%AF%E6%89%98%C2%B7%E5%B7%B4%E4%B9%94/5464649" 
+               target="_blank" 
+               style="color:#d81e06; font-weight:bold; text-decoration:underline; cursor:pointer;">
+                巴乔：忧郁王子经典瞬间 ➜
+            </a>
+        </li>
+    </ul>
+</div>
+    <footer>
+        <p>2026美加墨世界杯专题页面 | 仿央视体育官网样式 仅供学习使用</p>
+        <p style="margin-top:8px">赛事信息来源于央视体育官方平台 &copy; 2026</p>
+    </footer>
+
+    <!-- JS 代码（轮播 + 选择主队 全部写在这里） -->
+    <script>
+</body>
+</html>

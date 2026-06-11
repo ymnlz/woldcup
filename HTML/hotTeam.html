@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026世界杯 - 热门球队</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f5f7;
+            color: #333;
+            line-height: 1.8;
+        }
+        .top-bar {
+            background-color: #c00;
+            color: #fff;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 14px;
+        }
+        .header {
+            background-color: #003366;
+            padding: 20px 0;
+        }
+        .header-wrap {
+            width: 95%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo {
+            font-size: 28px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .sub-title {
+            color: #ccc;
+            font-size: 16px;
+        }
+        .nav {
+            background-color: #d81e06;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .nav-wrap {
+            width: 95%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 18px;
+            font-size: 15px;
+            transition: background 0.3s;
+            border-right: 1px solid #b01805;
+        }
+        .nav a:hover, .nav a.active {
+            background-color: #b01805;
+        }
+        .main {
+            width: 95%;
+            max-width: 1300px;
+            margin: 20px auto 40px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 6px;
+            padding: 25px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .card-title {
+            font-size: 20px;
+            color: #003366;
+            border-left: 4px solid #d81e06;
+            padding-left: 12px;
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+        .card-content { font-size: 15px; }
+        .list-item {
+            list-style: none;
+            margin: 10px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+        .list-item::before {
+            content: "•";
+            color: #d81e06;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+        footer {
+            background: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .nav a { padding: 10px 12px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">2026美加墨世界杯专题 | 全程高清直播 海量赛事资讯</div>
+    <div class="header">
+        <div class="header-wrap">
+            <div class="logo">FIFA 2026世界杯</div>
+            <div class="sub-title">第23届国际足联世界杯 · 美加墨联合举办</div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="nav-wrap">
+            <a href="index.html">世界杯首页</a>
+            <a href="schedule.html">赛程</a>
+            <a href="rank.html">积分榜</a>
+            <a href="team.html">参赛队伍</a>
+            <a href="channel.html">观赛渠道</a>
+            <a href="hotTeam.html" class="active">热门球队</a>
+            <a href="hotPlayer.html">热门队员</a>
+            <a href="fansGroup.html">看球天团</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="card">
+    <h2 class="card-title">夺冠热门球队</h2>
+    <ul class="list-item">
+        <li style="display:flex;align-items:center;gap:10px;">
+            <img src="argentina_flag.png" alt="阿根廷国旗" style="width:45px;height:30px;border-radius:3px;">
+            <span><strong>阿根廷（J组）</strong>：上届世界杯冠军，阵容稳定，大赛经验丰富，本届头号夺冠热门。</span>
+        </li>
+        <li style="display:flex;align-items:center;gap:10px;">
+            <img src="france_flag.png" alt="法国国旗" style="width:45px;height:30px;border-radius:3px;">
+            <span><strong>法国（I组）</strong>：攻防体系均衡，新生代球员实力强劲，连续多届稳居世界前列。</span>
+        </li>
+        <li style="display:flex;align-items:center;gap:10px;">
+            <img src="brazil_flag.png" alt="巴西国旗" style="width:45px;height:30px;border-radius:3px;">
+            <span><strong>巴西（C组）</strong>：传统足坛豪门，天才球员云集，球风华丽，观赏性拉满。</span>
+        </li>
+        <li style="display:flex;align-items:center;gap:10px;">
+            <img src="england_flag.png" alt="英格兰国旗" style="width:45px;height:30px;border-radius:3px;">
+            <span><strong>英格兰（L组）</strong>：青年人才储备充足，大赛发挥稳定，冲击力十足。</span>
+        </li>
+        <li style="display:flex;align-items:center;gap:10px;">
+            <img src="spain_flag.png" alt="西班牙国旗" style="width:45px;height:30px;border-radius:3px;">
+            <span><strong>西班牙（H组）</strong>：传控打法成熟，整体配合流畅，团队战斗力极强。</span>
+        </li>
+        <li style="display:flex;align-items:center;gap:10px;">
+            <img src="germany_flag.png" alt="德国国旗" style="width:45px;height:30px;border-radius:3px;">
+            <span><strong>德国（E组）</strong>：老牌劲旅重新崛起，战术纪律严明，韧性十足。</span>
+        </li>
+    </ul>
+</div>
+    </div>
+
+    <footer>
+        <p>2026美加墨世界杯专题页面 | 仿央视体育官网样式 仅供学习使用</p>
+        <p style="margin-top:8px">赛事信息来源于央视体育官方平台 &copy; 2026</p>
+    </footer>
+</body>
+</html>
